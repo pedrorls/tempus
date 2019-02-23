@@ -22,7 +22,11 @@ export default class Season extends React.Component {
         lon: position.coords.longitude,
       }),
       err => this.setState({ error: err }),
+<<<<<<< HEAD
     )
+=======
+    );
+>>>>>>> master
   }
 
   render() {
