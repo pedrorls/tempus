@@ -33,6 +33,6 @@ export default class Season extends React.Component {
       return <SeasonDisplay lat={lat} />
     }
     
-    return <Spinner />;
+    return <Spinner message="Please, accept location request." />;
   }
 }

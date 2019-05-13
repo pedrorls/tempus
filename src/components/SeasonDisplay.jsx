@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Grid } from 'semantic-ui-react';
 
 
 const seasonConfig = {
@@ -27,14 +28,16 @@ const SeasonDisplay = ({ lat }) => {
   const data = seasonConfig[season];
 
   return (
-    <>
-      <h2>
-        { season }
-      </h2>
-      <i className={`${data.iconName} ${data.color} icon big`} />
-      <h1>{ data.text }</h1>
-      <i className={`${data.iconName} ${data.color} icon massive`} />
-    </>
+    <Grid>
+      <Grid.Row centered columns={1}>
+        <Grid.Column verticalAlign="middle">
+          <h2>{ season }</h2>
+          <i className={`${data.iconName} ${data.color} icon big`} />
+          <h1>{ data.text }</h1>
+          <i className={`${data.iconName} ${data.color} icon massive`} />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
   );
 };
 
