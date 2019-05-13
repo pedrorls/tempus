@@ -27,14 +27,14 @@ const SeasonDisplay = ({ lat }) => {
   const data = seasonConfig[season];
 
   return (
-    <div>
+    <>
       <h2>
         { season }
       </h2>
       <i className={`${data.iconName} ${data.color} icon big`} />
       <h1>{ data.text }</h1>
       <i className={`${data.iconName} ${data.color} icon massive`} />
-    </div>
+    </>
   );
 };
 

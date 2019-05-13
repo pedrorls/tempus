@@ -1,6 +1,6 @@
 import React from 'react';
-
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 export default class Season extends React.Component {
   state = {
@@ -25,20 +25,14 @@ export default class Season extends React.Component {
 
   render() {
     const { lat, lon, errorMsg } = this.state;
-    return (
-      <div>
-        <h1>Your Current Position</h1>
-        <p>
-          Latitude: { lat }
-        </p>
-        <p>
-          Longitude: { lon }
-        </p>
-        <p>
-          Error: { errorMsg }
-        </p>
-        <SeasonDisplay lat={lat} />
-      </div>
-    );
+    if (!lat && errorMsg) {
+      return <p>Error: {errorMsg}</p>
+    }
+
+    if(lat && !errorMsg) {
+      return <SeasonDisplay lat={lat} />
+    }
+    
+    return <Spinner />;
   }
 }
